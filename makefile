@@ -1,5 +1,5 @@
 TAG=mylua
-PWD=(shell pwd)... /lua51
+PWD=set your absolute path here
 
 
 all:
@@ -10,7 +10,7 @@ all:
 	docker run --rm                                                    --name my $(TAG) lua -v
 	docker run --rm                                                    --name my $(TAG) luac -v
 	docker run --rm -w /app -v $(PWD)/app:/app                         --name my $(TAG) lua hello.lua
-	docker run --rm -w /app -v $(PWD)/app:/app -v $(PWD)/out:/out --rm --name my mylua luac -s -o /out/hello.32 /app/hello.lua
+	docker run --rm -w /app -v $(PWD)/app:/app -v $(PWD)/out:/out --rm --name my $(TAG) luac -s -o /out/hello.32 /app/hello.lua
 	ls -1 $(PWD)/out
 	ls -1 $(PWD)/app
 

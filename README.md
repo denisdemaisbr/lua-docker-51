@@ -1,1 +1,3 @@
-# lua-docker-51
+# docker + lua + luarocks
+## a sample image for devops
+
